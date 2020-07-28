@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet"
+        type="text/css"
+        href="Page.css">
+    
+        <script src="Page.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        
+     
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    </head>
+
+    <body>
+
+        <div id="container">
+            <div id="menuBar">
+                <a href="#homePage" class="navBarLinks">HOME</a>
+                <a href="#profile" class="navBarLinks">PROFILE</a>
+                <a href="#educ" class="navBarLinks">EDUCATION</a>
+                <a href="#orgs" class="navBarLinks">ORGS</a>
+                <a href="#work" class="navBarLinks">WORK</a>
+                <a href="#links" class="navBarLinks">CONTACT</a>
+            </div>
+            <div id="homePage">
+            </div>
+
+
+            <div id="profile" class="details">
+                <div class="title">
+                    <span style='font-size:40px;'>&#8212;&nbsp;&nbsp;</span>PROFILE<span style='font-size:40px;'>&nbsp;&nbsp;&#8212;</span>
+                </div>
+                <div id="profileContent" style="height: 500px;background-color: indianred;">
+
+                </div>
+            </div>
+
+
+            <div id="educ" class="details">
+                <div class="title">
+                    <span style='font-size:40px;'>&#8212;&nbsp;&nbsp;</span>EDUCATION<span style='font-size:40px;'>&nbsp;&nbsp;&#8212;</span>
+                </div>
+            </div>
+            <div id="orgs" class="details">
+                <div class="title">
+                    <span style='font-size:40px;'>&#8212;&nbsp;&nbsp;</span>ORGANIZATIONS<span style='font-size:40px;'>&nbsp;&nbsp;&#8212;</span>
+                </div>
+            </div>
+            <div id="work" class="details">
+                <div class="title">
+                    <span style='font-size:40px;'>&#8212;&nbsp;&nbsp;</span>WORK<span style='font-size:40px;'>&nbsp;&nbsp;&#8212;</span>
+                </div>
+            </div>
+            <div id="links" class="details">
+                <div class="title" style="color: white;">
+                    <span style='font-size:40px;color: white;'>&#8212;&nbsp;&nbsp;</span>CONTACTS<span style='font-size:40px;color: white;'>&nbsp;&nbsp;&#8212;</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBbPeRmFN4x0igfeNAFVxJIqOIqbm1DxbQ",
+            authDomain: "ccapdev-resume-cc1af.firebaseapp.com",
+            databaseURL: "https://ccapdev-resume-cc1af.firebaseio.com",
+            projectId: "ccapdev-resume-cc1af",
+            storageBucket: "ccapdev-resume-cc1af.appspot.com",
+            messagingSenderId: "362707667007",
+            appId: "1:362707667007:web:d3191b1d75564dfd92908a"
+        };
+        // Initialize Firebase
+        var defaultProject = firebase.initializeApp(firebaseConfig);
+        
+        var db = firebase.firestore()
+
+        // sa work input type dapat  toh
+        // var email = "courtney.ngo@dlsu.edu.ph";
+        // var password = "abcd1234";
+
+        // firebase
+
+        </script>
+    </body>
+</html>
