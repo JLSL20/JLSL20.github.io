@@ -207,14 +207,15 @@
 
         <div id="PopUp" class="bg-modal">
             <div id="box">
-                <div style="margin: 0 auto;">
-                    <img src="user.png" alt="user" width="90px" height="90px">
+                <div style="margin: 0 auto; display: grid ; grid-template-columns: auto 80px;margin-left: 70px;">
+                    <img src="user.png" alt="user" width="90px" height="90px" >
+                    <button id="close" style="line-height: 10px;">X</button>
                 </div>
-                <form id=loginForm >
+                <form id=loginForm onsubmit="return false" >
                     <div id="container2">
-                        <input id="emailInputBox" type="email" name="emailInput">
-                        <input id="pswdInputBox" type="password" name="passwordInput">
-                        <button id ="login" class="button3" onclick="loginUser()" onmousedown="mDown(this)" onmouseup="mUp(this)">Sign in</button>
+                        <input class="loginInputs" id="emailInputBox" type="email" name="emailInput"  placeholder="Email"  required>
+                        <input class="loginInputs" id="pswdInputBox" type="password" name="passwordInput" placeholder="Password"  required>
+                        <button id ="login" class="button3"  onmousedown="mDown(this)" onmouseup="mUp(this)">Sign in</button>
                     </div>
                 </form>
             </div>
