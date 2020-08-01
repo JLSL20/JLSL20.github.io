@@ -114,7 +114,6 @@ function get_info() {
 
         var id = "'" + doc.id + "'";
         delete_btn.setAttribute("class", "button2");
-        delete_btn.style.visibility = "hidden";
         delete_btn.setAttribute("onclick", `delete_item(${id})`);
         delete_btn.setAttribute("onmousedown","mDown(this)");
         delete_btn.setAttribute("onmouseup","mUp(this)");
@@ -165,7 +164,6 @@ function get_info() {
 
         var id = "'" + doc.id + "'";
         delete_btn.setAttribute("class", "button2");
-        delete_btn.style.visibility = "hidden";
         delete_btn.setAttribute("onclick", `delete_item(${id})`);
         delete_btn.setAttribute("onmousedown","mDown(this)");
         delete_btn.setAttribute("onmouseup","mUp(this)");
@@ -179,6 +177,8 @@ function get_info() {
         
         // Append div to PARENT
         parent.appendChild(div);
+
+        $(".button2").hide();
       })
     });
 
@@ -219,7 +219,6 @@ function get_info() {
 
         var id = "'" + doc.id + "'";
         delete_btn.setAttribute("class", "button2");
-        delete_btn.style.visibility = "hidden";
         delete_btn.setAttribute("onclick", `delete_item(${id})`);
         delete_btn.setAttribute("onmousedown","mDown(this)");
         delete_btn.setAttribute("onmouseup","mUp(this)");
@@ -234,6 +233,8 @@ function get_info() {
         
         // Append div to PARENT
         parent.appendChild(div);
+
+        $(".button2").hide();
       })
     });
 
@@ -278,10 +279,16 @@ function get_info() {
           box.appendChild(twitter_div);
           box.appendChild(github_div);
           parent.appendChild(box);
+
+
+
+          $(".button2").hide();
     })
     .catch(function (error) {
         console.error("Error reading document: ", error);
     });
+
+    $(".button2").hide();
 
 };
 
@@ -318,33 +325,52 @@ function loginUser(){
   var password = document.getElementById('pswdInputBox').value;
 
 
+
   firebase.auth().signInWithEmailAndPassword(email,password).then(function(user){
       console.log("user signed in");
 
       var user = firebase.auth().currentUser;
       if(user != null){
           console.log(user.email);
+          $("#PopUp").hide();
+          $(".button").show();
+          $(".button2").show();
+         
       }
   }).catch(function(err){
       if(err.code == "auth/wrong-password"){
-          alert("wrong password")
+          alert("wrong password");
+          document.getElementById("pswdInputBox").value ="";
       }else{
           alert(err.message);
+          document.getElementById("loginForm").reset();
       }
   });
 
 };
 
 
+
 $(document).ready(function(){
+
   get_info();
   $("#PopUp").hide();
- 
+  $(".button").hide();
+
   $("#logInButton").click(function(){
     $("#PopUp").show();
-    
+  });
+
+  $("#login").click(function(){
+    loginUser();
+  });
+
+  $("#close").click(function(){
+    $("#PopUp").hide();
   });
 
 });
+
+
 
 
