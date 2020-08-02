@@ -31,6 +31,9 @@ function add_education() {
         console.log("Document written with ID: ", doc.id);
         console.log(doc.name);
         alert("Successfully added!");
+        document.getElementById("lab").value= "";
+        document.getElementById("name").value= "";
+        document.getElementById("ys").value= "";
       })
       .catch(function (error) {
         console.error("Error adding document: ", error);
