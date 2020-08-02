@@ -29,6 +29,8 @@ function add_education() {
         console.log("Document written with ID: ", doc.id);
         console.log(doc.name);
         alert("Successfully added!");
+        document.getElementById("name").value= "";
+        document.getElementById("pos").value= "";
       })
       .catch(function (error) {
         console.error("Error adding document: ", error);
