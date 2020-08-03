@@ -13,7 +13,7 @@ function mOut(obj){
     obj.style.color="#72757A";
 };
 
-function add_education() {
+function add_orgs() {
     console.log("clicked add_contact")
     name = document.getElementById('name').value;
     position = document.getElementById('pos').value;
@@ -45,7 +45,7 @@ function changePage(){
 $(document).ready(function(){
 
     $("#addButton").click(function(){
-        add_education();
+        add_orgs();
     });
     $("#goBack").click(function(){
         changePage();
