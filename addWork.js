@@ -13,7 +13,7 @@ function mOut(obj){
     obj.style.color="#72757A";
 };
 
-function add_education() {
+function add_work() {
     console.log("clicked add_contact")
     lab = document.getElementById('lab').value;
     name = document.getElementById('name').value;
@@ -48,7 +48,7 @@ function changePage(){
 $(document).ready(function(){
 
     $("#addButton").click(function(){
-        add_education();
+        add_work();
     });
     $("#goBack").click(function(){
         changePage();
