@@ -310,8 +310,6 @@ function loginUser(){
       var user = firebase.auth().currentUser;
       if(user != null){
           console.log(user.email);
-          location.replace("edit.html");
-
           var queryString =  "?" + email + "&" + password;
           window.location.href = "edit.html" + queryString;
 
