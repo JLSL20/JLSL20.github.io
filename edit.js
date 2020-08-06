@@ -354,8 +354,6 @@ function logout(){
 
 
 
-
-
 function get_loginInfo(){
   var queryString = decodeURIComponent(window.location.search);
   queryString = queryString.substring(1);
@@ -368,6 +366,63 @@ function get_loginInfo(){
   checkAuthen(email,password);
 };
 
+  function goToEditInfo(){
+
+    var queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+    var queries = queryString.split("&");
+    console.log(queries);
+    var email = queries[0];
+    var password  = queries[1];
+    var queryString =  "?" + email + "&" + password;
+    window.location.href = "editIntro.html" + queryString;
+  };
+  function goToAddEduc(){
+
+    var queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+    var queries = queryString.split("&");
+    console.log(queries);
+    var email = queries[0];
+    var password  = queries[1];
+    var queryString =  "?" + email + "&" + password;
+    window.location.href = "addEducation.html" + queryString;
+  };
+  function goToAddWork(){
+
+    var queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+    var queries = queryString.split("&");
+    console.log(queries);
+    var email = queries[0];
+    var password  = queries[1];
+    var queryString =  "?" + email + "&" + password;
+    window.location.href = "addWork.html" + queryString;
+  };
+  function goToAddOrgs(){
+
+    var queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+    var queries = queryString.split("&");
+    console.log(queries);
+    var email = queries[0];
+    var password  = queries[1];
+    var queryString =  "?" + email + "&" + password;
+    window.location.href = "addOrgs.html" + queryString;
+  };
+  function goToEditLinks(){
+
+    var queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+    var queries = queryString.split("&");
+    console.log(queries);
+    var email = queries[0];
+    var password  = queries[1];
+    var queryString =  "?" + email + "&" + password;
+    window.location.href = "editLinks.html" + queryString;
+  };
+  
+
 
 
 $(document).ready(function(){
@@ -378,6 +433,22 @@ $(document).ready(function(){
   $("#signOutButton").click(function(){
         logout();
   });
+  $("#editAboutMe").click(function(){
+      goToEditInfo();
+  });
+  $("#addEducButton").click(function(){
+      goToAddEduc();
+  });
+  $("#addWorkButtton").click(function(){
+      goToAddWork();
+  });
+  $("#addOrgsButton").click(function(){
+    goToAddOrgs();
+  });
+  $("#editButtonLinks").click(function(){
+    goToEditLinks();
+  });
+
 
 });
 
