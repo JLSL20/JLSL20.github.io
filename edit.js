@@ -21,6 +21,7 @@ function checkAuthen(a,b){
     
   }else{
     console.log("GUMANA2");  
+    $(".button").hide();
   }
 };
 
