@@ -14,8 +14,26 @@ function mOut(obj){
 };
 
 
+function checkAuthen(a,b){
+  if((a==="joseph_leonard_lee@dlsu.edu.ph" && b==="1234abcd") || (a==="courtney.ngo@dlsu.edu.ph" && b==="abcd1234")){
+    console.log("GUMANA");
+    $(".button").show();
+    
+  }else{
+    console.log("GUMANA2");  
+  }
+};
+
 
 function get_info() {
+
+  var queryString = decodeURIComponent(window.location.search);
+  queryString = queryString.substring(1);
+  var queries = queryString.split("&");
+  console.log(queries);
+  var email = queries[0];
+  var password  = queries[1];
+
 
 
     db.collection("others").doc("intro").get()
@@ -130,6 +148,17 @@ function get_info() {
         
         // Append div to PARENT
         parent.appendChild(div1);
+
+        if((email==="joseph_leonard_lee@dlsu.edu.ph" && password==="1234abcd") || (email==="courtney.ngo@dlsu.edu.ph" && password==="abcd1234")){
+          console.log("GUMANA");          
+        }else{
+          $(".button2").hide();
+        }
+
+
+
+
+        
       })
     });
 
@@ -177,7 +206,11 @@ function get_info() {
         
         // Append div to PARENT
         parent.appendChild(div);
-
+        if((email==="joseph_leonard_lee@dlsu.edu.ph" && password==="1234abcd") || (email==="courtney.ngo@dlsu.edu.ph" && password==="abcd1234")){
+          console.log("GUMANA");          
+        }else{
+          $(".button2").hide();
+        }
       })
     });
 
@@ -232,10 +265,13 @@ function get_info() {
         
         // Append div to PARENT
         parent.appendChild(div);
+        if((email==="joseph_leonard_lee@dlsu.edu.ph" && password==="1234abcd") || (email==="courtney.ngo@dlsu.edu.ph" && password==="abcd1234")){
+          console.log("GUMANA");          
+        }else{
+          $(".button2").hide();
+        }
       })
     });
-
-
 
 
     db.collection("others").doc("link").get()
@@ -319,12 +355,25 @@ function logout(){
 
 
 
+function get_loginInfo(){
+  var queryString = decodeURIComponent(window.location.search);
+  queryString = queryString.substring(1);
+  var queries = queryString.split("&");
+  console.log(queries);
+  var email = queries[0];
+  var password  = queries[1];
+  console.log(email);
+  console.log(password);
+  checkAuthen(email,password);
+};
+
+
 
 $(document).ready(function(){
-
   get_info();
-
-
+  
+  get_loginInfo();
+ 
   $("#signOutButton").click(function(){
         logout();
   });
