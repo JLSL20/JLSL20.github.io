@@ -39,8 +39,15 @@ function add_orgs() {
 
 
 function changePage(){
-    location.replace("edit.html");
-}
+      var queryString = decodeURIComponent(window.location.search);
+      queryString = queryString.substring(1);
+      var queries = queryString.split("&");
+      console.log(queries);
+      var email = queries[0];
+      var password  = queries[1];
+      var queryString =  "?" + email + "&" + password;
+      window.location.href = "edit.html" + queryString;
+    }
 
 $(document).ready(function(){
 
