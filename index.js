@@ -303,6 +303,7 @@ function loginUser(){
 
 
 
+
   firebase.auth().signInWithEmailAndPassword(email,password).then(function(user){
       console.log("user signed in");
 
@@ -311,11 +312,16 @@ function loginUser(){
           console.log(user.email);
           location.replace("edit.html");
 
+          var queryString =  "?" + email + "&" + password;
+          window.location.href = "edit.html" + queryString;
+
       }
   }).catch(function(err){
       if(err.code == "auth/wrong-password"){
           alert("wrong password");
           document.getElementById("pswdInputBox").value ="";
+
+
       }else{
           alert(err.message);
           document.getElementById("loginForm").reset();
@@ -324,12 +330,21 @@ function loginUser(){
 
 };
 
+function get_userInfo(){
+  var email = document.getElementById('emailInputBox').value;
+  var password = document.getElementById('pswdInputBox').value;
+
+  var queryString = "?" + email + "&" + password;
+  window.location.href = "edit.html" + queryString;
+};
 
 
 $(document).ready(function(){
 
   get_info();
   $("#PopUp").hide();
+  $("#emailInputBox").val("");
+  $("#pswdInputBox").val("");
 
   $("#logInButton").click(function(){
     $("#PopUp").show();
